@@ -1,10 +1,38 @@
 import React from 'react';
-import Header from '../Header/Header';
+import { useLoaderData } from 'react-router-dom';
+import banner from '../../img/banner.JPG'
+import Quiz from '../Quiz/Quiz';
 
 const Home = () => {
+    const fullData = useLoaderData();
+    const {data} = fullData;
+    // console.log(data);
     return (
         <div className='bg-cyan-50 mt-16 lg:px-32 md:px-16 px-4 py-5'>
-            <Header></Header>
+            <header>
+                {/* <h2 className='text-2xl font-bold'>This is Header: {data.data.name}</h2> */}
+                <section className='pt-36'>
+                    <div className='md:flex items-center bg-cyan-200 rounded-xl'>
+                        <div className='mr-4 mb-4 p-2'>
+                            <p className='lg:text-4xl md:text-xl font-bold text-slate-500'>Welcome To</p>
+                            <p className='lg:text-4xl md:text-xl font-bold text-sky-400'><span className='text-blue-500'>KT</span> Programming Quiz</p>
+                            <div className='pt-4'>
+                                <p className='lg:text-xl md:text-md text-slate-400'>You can learn React, JavaScript, CSS, Git related questions in this website. Then what are you waiting for. Let's jump!!!</p>
+                            </div>
+                        </div>
+                        <div className='w-70 h-full'>
+                            <img src={banner} alt="" />
+                        </div>
+                    </div>
+                </section>
+            </header>
+            <main className='pt-6'>    
+                <section  className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 content-center gap-4'>
+                    {
+                        data.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
+                    }
+                </section>
+            </main>
         </div>
     );
 };
