@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import banner from '../../img/banner.JPG'
-import Quiz from '../Quiz/Quiz';
+import TopicCard from '../TopicCard/TopicCard';
 
 const Home = () => {
     const fullData = useLoaderData();
@@ -29,7 +29,7 @@ const Home = () => {
             <main className='pt-6'>    
                 <section  className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 content-center gap-4'>
                     {
-                        data.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
+                        data.map(quiz => <TopicCard key={quiz.id} quiz={quiz}></TopicCard>)
                     }
                 </section>
             </main>
