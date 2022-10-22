@@ -5,19 +5,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const QuizCard = ({quiz}) => {
     const {question, options, correctAnswer} = quiz;
-    console.log(quiz);
 
     const displayCorrectAnswer =()=>{
         toast.info('Correct Answer: '+ correctAnswer, {position: toast.POSITION.TOP_RIGHT});
-        // alert(correctAnswer);
     }
     const matchAns = option =>{
         if(option === correctAnswer){
             toast.success('Your are right', {position: toast.POSITION.BOTTOM_CENTER});
-            // alert('right');
         }else{
             toast.warn('Your are wrong', {position: toast.POSITION.BOTTOM_CENTER});
-            // alert('wrong');
         }
     }
 
@@ -31,7 +27,7 @@ const QuizCard = ({quiz}) => {
             <div className='grid md:grid-cols-2 grid-cols-1 mt-2 gap-4'>
                 {
                     options.map(option => <label
-                    key={option.id}
+                    key={option}
                     className='bg-cyan-100  rounded-lg p-4 text-xl font-normal text-slate-500'
                     >
                         <input type="radio" value={option} name='radio' onClick={() => matchAns(option)}/>

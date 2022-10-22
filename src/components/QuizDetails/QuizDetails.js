@@ -6,7 +6,6 @@ const QuizDetails = () => {
     const topic = useLoaderData();
     const {data} = topic;
     const {questions} = data;
-    console.log(questions);
     return (
         <section className='bg-cyan-50 mt-16 lg:px-32 md:px-16 px-4 py-5'>
             <div className='pt-52'>
