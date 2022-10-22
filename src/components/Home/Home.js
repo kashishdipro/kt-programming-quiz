@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <div className='bg-cyan-50 mt-16 lg:px-32 md:px-16 px-4 py-5'>
             <header>
-                {/* <h2 className='text-2xl font-bold'>This is Header: {data.data.name}</h2> */}
                 <section className='pt-36'>
                     <div className='md:flex items-center bg-cyan-200 rounded-xl'>
                         <div className='mr-4 mb-4 p-2'>
