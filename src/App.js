@@ -6,6 +6,7 @@ import Topics from './components/Topics/Topics';
 import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import QuizDetails from './components/QuizDetails/QuizDetails';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,10 @@ function App() {
         {
           path:'/blog',
           element: <Blog></Blog>
+        },
+        {
+          path: '*',
+          element: <NotFound></NotFound>
         }
       ]
     }
